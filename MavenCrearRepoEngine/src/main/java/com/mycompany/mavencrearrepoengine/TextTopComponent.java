@@ -53,16 +53,52 @@ public final class TextTopComponent extends TopComponent {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
+        tituloVentana = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        nombreRepo = new javax.swing.JTextPane();
+        bCrear = new javax.swing.JButton();
+        tituloCaja = new javax.swing.JLabel();
+
+        org.openide.awt.Mnemonics.setLocalizedText(tituloVentana, org.openide.util.NbBundle.getMessage(TextTopComponent.class, "TextTopComponent.tituloVentana.text")); // NOI18N
+
+        jScrollPane1.setViewportView(nombreRepo);
+
+        org.openide.awt.Mnemonics.setLocalizedText(bCrear, org.openide.util.NbBundle.getMessage(TextTopComponent.class, "TextTopComponent.bCrear.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(tituloCaja, org.openide.util.NbBundle.getMessage(TextTopComponent.class, "TextTopComponent.tituloCaja.text")); // NOI18N
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(tituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(115, 115, 115))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tituloCaja, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(bCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(tituloVentana)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(tituloCaja)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(bCrear)
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -73,12 +109,19 @@ public final class TextTopComponent extends TopComponent {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bCrear;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane nombreRepo;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JLabel tituloCaja;
+    private javax.swing.JLabel tituloVentana;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {

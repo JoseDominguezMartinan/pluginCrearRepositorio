@@ -5,6 +5,9 @@
  */
 package com.mycompany.mavencrearrepoengine;
 
+import java.io.IOException;
+import org.kohsuke.github.GHCreateRepositoryBuilder;
+import org.kohsuke.github.GitHub;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -64,6 +67,11 @@ public final class TextTopComponent extends TopComponent {
         jScrollPane1.setViewportView(nombreRepo);
 
         org.openide.awt.Mnemonics.setLocalizedText(bCrear, org.openide.util.NbBundle.getMessage(TextTopComponent.class, "TextTopComponent.bCrear.text")); // NOI18N
+        bCrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bCrearMouseClicked(evt);
+            }
+        });
 
         org.openide.awt.Mnemonics.setLocalizedText(tituloCaja, org.openide.util.NbBundle.getMessage(TextTopComponent.class, "TextTopComponent.tituloCaja.text")); // NOI18N
 
@@ -114,6 +122,26 @@ public final class TextTopComponent extends TopComponent {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCrearMouseClicked
+        // TODO add your handling code here:
+        String nombre=nombreRepo.getText();
+         try {
+
+            GitHub github = GitHub.connect(); // realizamos conexion con git
+
+            GHCreateRepositoryBuilder builder;
+
+            builder = github.createRepository(nombre); // creamos el repositorio con el nombre que hemos recogido
+
+            builder.create();
+
+        } catch (IOException ex) {
+
+            System.out.println("error" + ex); // en caso de generarse un error lo recogemos 
+
+        }
+    }//GEN-LAST:event_bCrearMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCrear;

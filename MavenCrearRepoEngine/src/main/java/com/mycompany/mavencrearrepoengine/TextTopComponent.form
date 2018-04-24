@@ -98,6 +98,9 @@
               <ResourceString bundle="com/mycompany/mavencrearrepoengine/Bundle.properties" key="TextTopComponent.bCrear.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bCrearMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="tituloCaja">
           <Properties>
